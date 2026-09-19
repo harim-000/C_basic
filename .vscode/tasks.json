@@ -2,6 +2,26 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "현재 파일: 언어에 맞게 빌드/실행",
+      "type": "process",
+      "command": "/workspaces/C_basic/.vscode/run-current-file.sh",
+      "args": [
+        "${file}",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}",
+        "env": {
+          "MPLCONFIGDIR": "/tmp/matplotlib-cache"
+        }
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
       "label": "C++: 현재 파일 빌드",
       "type": "shell",
       "command": "/usr/bin/g++",
@@ -20,7 +40,21 @@
       "problemMatcher": ["$gcc"],
       "group": {
         "kind": "build",
-        "isDefault": true
+        "isDefault": false
+      }
+    },
+    {
+      "label": "Python: 현재 파일 실행",
+      "type": "shell",
+      "command": "/home/codespace/.python/current/bin/python3",
+      "args": ["${file}"],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
       }
     }
   ]

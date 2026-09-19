@@ -38,4 +38,7 @@ int main(void)
 입력한 비트 패턴: 10000000
 unsigned char로 읽으면: 128
 signed   char로 읽으면: -128
+
+자료형 결합 규칙
+- signed int, unsigned int, signed long, unsigned long, signed long
 */

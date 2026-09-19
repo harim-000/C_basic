@@ -20,18 +20,20 @@ int main(void)
     char        s1 = 0x00, s2 = 0x7F, s3 = 0x80, s4 = 0xFF;
 
     cout << "비트패턴\t\tunsigned char\tchar(signed)" << endl;
-    cout << "00000000(0x00)\t" << (int)u1 << "\t\t" << (int)s1 << endl;
-    cout << "01111111(0x7F)\t" << (int)u2 << "\t\t" << (int)s2 << endl;
-    cout << "10000000(0x80)\t" << (int)u3 << "\t\t" << (int)s3 << endl;
-    cout << "11111111(0xFF)\t" << (int)u4 << "\t\t" << (int)s4 << endl;
+    cout << "00000000(0x00)\t\t" << (int)u1 << "\t\t" << (int)s1 << endl;
+    cout << "01111111(0x7F)\t\t" << (int)u2 << "\t\t" << (int)s2 << endl;
+    cout << "10000000(0x80)\t\t" << (int)u3 << "\t\t" << (int)s3 << endl;
+    cout << "11111111(0xFF)\t\t" << (int)u4 << "\t\t" << (int)s4 << endl;
 
     return 0;
 }
 
 /* 실행 결과
-비트패턴		unsigned char	char(signed)
+비트패턴		unsigned char		char(signed)
 00000000(0x00)	0		0
 01111111(0x7F)	127		127
 10000000(0x80)	128		-128
 11111111(0xFF)	255		-1
+
+
 */

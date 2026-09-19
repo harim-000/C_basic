@@ -1,0 +1,14 @@
+{
+  "files.associations": {
+    "*.py": "python",
+    "*.cpp": "cpp",
+    "*.cc": "cpp",
+    "*.cxx": "cpp"
+  },
+  "python.defaultInterpreterPath": "/home/codespace/.python/current/bin/python3",
+  "code-runner.executorMap": {
+    "python": "/home/codespace/.python/current/bin/python3 -u",
+    "cpp": "cd $dir && /usr/bin/g++ -std=c++17 -g -Wall -Wextra $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+  },
+  "code-runner.runInTerminal": true
+}
