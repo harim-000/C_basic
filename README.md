@@ -9,6 +9,25 @@ Visual Studio Code에서 다음 확장을 사용해 실습 코드를 작성하�
 - **C/C++**: C++ 실습 코드 작성, 빌드 및 디버깅
 - **Jupyter**: Python 실습 코드 실행 및 결과 시각화
 
+## IntelliJ IDEA에서 C++ 컴파일 및 실행 (macOS)
+
+이 저장소의 C++ 파일은 각각 `main()`이 있는 독립 예제입니다. 루트의 `CMakeLists.txt`가 각 `.cpp` 파일을 별도 실행 대상으로 등록합니다. 여러 파일을 한 실행 파일로 묶어 빌드하지 마세요.
+
+1. IntelliJ IDEA에서 **CLion C and C++** 플러그인을 설치하고 IDE를 재시작합니다.
+2. **Settings → Build, Execution, Deployment → Toolchains**에서 macOS 로컬 도구 체인을 선택합니다. C++ compiler는 `/usr/bin/clang++`, C compiler는 `/usr/bin/clang`, debugger는 LLDB를 사용합니다. Command Line Tools는 이 Mac에 이미 설치되어 있습니다.
+3. **Toolchains** 화면의 CMake 항목에서 실행 파일을 선택합니다. 플러그인이 제공하는 CMake가 보이면 그것을 선택하세요. 보이지 않으면 `brew install cmake`로 설치한 뒤 감지된 경로를 선택합니다. 현재 터미널에는 `cmake` 명령이 설치되어 있지 않습니다.
+4. 프로젝트 루트 `C_basic`을 열고 `CMakeLists.txt`를 CMake 프로젝트로 로드합니다. 소스 파일을 추가한 뒤에는 CMake 프로젝트를 다시 로드합니다.
+5. 실행할 예제 파일의 `main()` 옆 실행 아이콘을 누르거나, 상단 실행 구성에서 해당 `ex_...` 대상을 선택하고 **Run**을 누릅니다. 디버깅은 **Debug**를 선택합니다.
+
+예를 들어 `C++/chapter1/basic.cpp`의 실행 대상은 `ex_C_chapter1_basic_cpp`입니다. 터미널에서 이 파일만 컴파일해 실행하려면 다음과 같이 할 수 있습니다.
+
+```bash
+clang++ -std=c++17 -g -Wall -Wextra 'C++/chapter1/basic.cpp' -o /tmp/c_basic_example
+/tmp/c_basic_example
+```
+
+CLion 플러그인의 **C/C++ File** 실행 구성이 보이면 CMake 대상 선택 없이 파일 하나를 직접 실행할 수도 있습니다. 이 저장소처럼 독립 예제를 다룰 때 편리합니다.
+
 ## 설치된 VS Code 확장
 
 ### 주요 확장
