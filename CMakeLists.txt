@@ -16,7 +16,6 @@ file(GLOB_RECURSE EXERCISE_SOURCES
 foreach(source IN LISTS EXERCISE_SOURCES)
     string(REGEX REPLACE "[^A-Za-z0-9_]+" "_" target "${source}")
     set(target "ex_${target}")
-    add_executable("${target}" "${source}"
-            C++/chapter5/5장-02.cpp)
+    add_executable("${target}" "${source}")
     target_compile_options("${target}" PRIVATE -Wall -Wextra)
 endforeach()
